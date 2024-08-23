@@ -1,7 +1,9 @@
+# Learning Utilities from Demonstrations in Markov Decision Processes
+
 This repository contains the code and the data needed for running the
 experiments of the paper.
 
-# Repository Organization
+## Repository Organization
 
 The repository is organized as follows:
 - In folder ```data``` there are two .csv files containing the data provided by
@@ -23,7 +25,7 @@ The repository is organized as follows:
 - Finally, notebook ```preliminary plots.ipynb``` permits to create in folder
   ```plots/preliminary plots``` plots about some utility functions.
 
-# Requirements
+## Requirements
 
 To execute the code, some Python packages are required. Specifically:
 - cvxpy (1.5.2)
@@ -34,7 +36,7 @@ To execute the code, some Python packages are required. Specifically:
 The version number in parenthesis represents the version that we used for
 developing the code.
 
-# Datasets
+## Datasets
 
 The two datasets used for the experiments are contained into the ```data```
 folder. Both datasets contain 15 entries collected in a completely anonymous
