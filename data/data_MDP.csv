@@ -1,0 +1,16 @@
+MDP_1_M_0,MDP_2_M_0,MDP_2_M_30,MDP_2_M_60,MDP_2_H_0,MDP_3_M_0,MDP_3_M_30,MDP_3_M_60,MDP_3_M_200,MDP_3_H_0,MDP_3_H_30,MDP_3_H_60,MDP_3_H_200,MDP_3_T_0,MDP_4_M_0,MDP_4_M_30,MDP_4_M_60,MDP_4_M_90,MDP_4_M_120,MDP_4_M_150,MDP_4_M_180,MDP_4_M_300,MDP_4_M_400,MDP_4_H_0,MDP_4_H_30,MDP_4_H_60,MDP_4_H_100,MDP_4_H_130,MDP_4_H_200,MDP_4_H_300,MDP_4_H_1000,MDP_4_T_0,MDP_4_T_60,MDP_4_T_100,MDP_4_T_200,MDP_4_T_500,MDP_4_T_1000
+a+,a+,a+,a+,a-,a+,a+,a+,a0,a+,a+,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-
+a-,a-,a-,a+,a-,a-,a-,a+,a+,a-,a-,a-,a0,a-,a-,a-,a-,a-,a-,a-,a-,a0,a0,a-,a-,a-,a-,a-,a-,a+,a0,a-,a-,a-,a-,a0,a0
+a+,a+,a+,a+,a+,a0,a0,a0,a-,a+,a+,a0,a-,a0,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a0,a0,a0,a0,a0,a-,a-,a-,a0,a0,a0
+a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a-,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a-,a-,a-,a-,a-,a-
+a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a0,a0,a0,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-
+a+,a+,a+,a+,a+,a+,a+,a+,a+,a0,a0,a0,a0,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a0,a0,a0,a0,a0,a0,a0,a0,a-,a-,a-,a-,a-,a-
+a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0,a0
+a0,a-,a+,a+,a-,a-,a-,a+,a+,a0,a-,a0,a-,a-,a-,a-,a-,a-,a+,a+,a+,a+,a+,a-,a-,a-,a-,a-,a-,a+,a+,a-,a-,a-,a-,a-,a+
+a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a-,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a-,a-,a-,a-,a-,a-
+a+,a+,a+,a+,a0,a0,a0,a0,a-,a0,a0,a0,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-
+a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a-,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a-,a-,a-,a-,a-,a-
+a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a-,a-,a-,a-,a-,a-,a+,a+,a-,a-,a-,a-,a-,a-
+a+,a+,a+,a+,a+,a0,a0,a0,a+,a+,a+,a+,a+,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a+,a+,a+,a+,a+,a+,a+,a+,a0,a0,a0,a0,a0,a0
+a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a+,a0,a0,a-,a-,a-,a-,a+,a+,a+,a+,a0,a0,a0,a0,a0,a0,a0,a-,a0,a0,a0,a0,a0,a0
+a0,a+,a+,a+,a-,a+,a+,a+,a+,a0,a0,a0,a+,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-,a-
