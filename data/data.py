@@ -282,3 +282,66 @@ def get_policies(M: DiscretizedMDP) -> List[list]:
 
         return policies
 
+def get_env_piE_random(
+              S: int,
+              A: int,
+              H: int,
+              eps_0: float,
+) -> Tuple[DiscretizedMDP, list]:
+        """
+        Construct a random instance of DiscretizedMDP with size of the state and
+        action spaces respectively S and A. S must be >= 2. Moreover, randomly
+        generate a deterministic expert's policy in this env.
+        """
+        # s_0 = M
+        s_0 = 1
+
+        # r = S x A x H, r in [0,1]
+        r = np.random.rand(S, A, H)
+
+        # p = S x A x H x S
+        p = np.zeros((S, A, H, S))
+        for s in range(S):
+                for a in range(A):
+                        for h in range(H):
+                                random_values = np.random.rand(S)
+                                p[s,a,h,:] = random_values / random_values.sum()
+
+        # MDP
+        M1 = MDP(S=S, A=A, H=H, r=r, p=p, s_0=s_0)
+
+        # DiscretizedMDP
+        M = DiscretizedMDP(M=M1,eps0=eps_0)
+
+        # piE = H x (S x Y) -> A
+        piE = [np.zeros((S, len(M.y_values[h]))) for h in range(H)]
+        for h in range(H):
+                piE[h][:,:] = np.random.randint(0, A, (S, len(M.y_values[h])))  # A excluded
+
+        return (M, piE)
+
+def construct_random_envs_and_policies(
+                N: int,
+                S: int,
+                A: int,
+                H: int,
+                eps_0: float,
+                seed: int
+) -> Tuple[List[DiscretizedMDP], List[list]]:
+            """
+            Construct N pairs (MDP, piE) with state and action spaces with
+            cardinalities S and A. The initial state will be s_0=1, and the
+            discretization eps_0=0.01.
+            """
+            np.random.seed(seed)
+
+            Ms = []
+            piEs = []
+
+            for _ in range(N):
+                    M, piE = get_env_piE_random(S=S, A=A, H=H, eps_0=eps_0)
+                    
+                    Ms.append(M)
+                    piEs.append(piE)
+
+            return Ms, piEs

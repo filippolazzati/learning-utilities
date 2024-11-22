@@ -139,6 +139,72 @@ def tractor(
 
     return U_avg, U_list, suboptimalities
 
+def tractor_many_envs(
+        N: int,
+        etaEs: List[np.ndarray],
+        Ms: List[DiscretizedMDP],
+        T: int,
+        alpha: float,
+        n_traj: int,
+        initial_U: np.ndarray,
+        L: float,
+        use_lipschitz: bool,
+        epsilon: float = 1e-2,
+        verbose: bool = True,
+    ) -> Tuple[np.ndarray, list, list]:
+    """
+    Analogous version of tractor with demonstrations in N>=1 environments.
+    """
+
+    U_list = []
+    U = initial_U
+    U_list.append(np.copy(U))
+
+    suboptimalities = []
+
+    # loop
+    for t in range(T):
+        if t==0 or (t+1)%10 ==0:
+            # compute candidate utility
+            U_avg = np.mean(np.stack(U_list, axis=0), axis=0)
+
+            max_comp = -np.infty
+            for i in range(N):
+                # find compatibility for U_avg
+                pi_avg = Ms[i].compute_optimal_policy(U_avg)
+                eta_avg = Ms[i].estimate_return_distribution(pi=pi_avg, n_traj=n_traj)
+                C = np.dot(U_avg, eta_avg-etaEs[i])
+                max_comp = np.maximum(max_comp, C)
+
+            # check termination condition -> use U_avg
+            suboptimalities.append(max_comp)
+
+            # print iteration
+            if verbose:
+                print('Iteration ', t,', expert suboptimality max_i C_i= ',max_comp)
+
+            if max_comp <= epsilon:
+                print('Terminate because max_comp < '+str(epsilon))
+                break
+
+        # compute the gradient
+        g = 0
+        for i in range(N):
+            # find return distribution of optimal policy for U
+            pi = Ms[i].compute_optimal_policy(U)
+            eta = Ms[i].estimate_return_distribution(pi=pi, n_traj=n_traj)
+            g += eta - etaEs[i]
+        
+        # apply the gradient
+        U = U - alpha*g
+
+        # project U onto the feasible set
+        U = project(U=U, H=Ms[0].M.H, L=L, eps0=Ms[0].eps0, use_lipschitz=use_lipschitz)
+
+        U_list.append(np.copy(U))
+
+    return U_avg, U_list, suboptimalities
+
 def project(
         U: np.ndarray,
         H: int,

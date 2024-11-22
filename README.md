@@ -16,12 +16,14 @@ The repository is organized as follows:
 - File ```utils.py``` provides some utilities for plotting, and a method for
   constructing some baseline utilities.
 - The experiments described in the paper can be executed by running files
-  ```exp1.py``` and ```exp2.py```. The results of the simulations will be saved
-  respectively in folders ```results/exp1``` and ```results/exp2```.
+  ```exp1.py```, ```exp2.py```, and ```exp2sim.py``` (exp2sim represents the
+  second part of experiment 2). The results of the simulations will be saved
+  respectively in folders ```results/exp1```, ```results/exp2```, and
+  ```results/exp2sim```.
 - The results of the two experiments can be analysed through notebooks ```exp1 -
-  analysis.ipynb``` and ```exp2 - analysis.ipynb```. In particular, the latter
-  notebook will save many plots in folders ```plots/plot 1```, ```plots/plot
-  2```, ```plots/plot 3```, ```plots/plot 4```, and ```plots/plot 5```.
+  analysis.ipynb```, ```exp2 - analysis.ipynb``` and ```exp2sim - analysis.ipynb```. In particular, the latter
+  notebooks will save many plots in folders ```plots/plot 1```, ```plots/plot
+  2```, ```plots/plot 3```, ```plots/plot 4```, ```plots/plot 5```, and ```plots/plot exp2sim```.
 - Finally, notebook ```preliminary plots.ipynb``` permits to create in folder
   ```plots/preliminary plots``` plots about some utility functions.
 

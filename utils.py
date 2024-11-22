@@ -234,6 +234,12 @@ def get_utility(
         fun = np.vectorize(lambda x: x**2)
     elif function == 'linear':
         fun = np.vectorize(lambda x: x)
+    elif function == 'strongly concave':
+        fun = np.vectorize(lambda x: x**(0.2))
+    elif function == 'strongly convex':
+        fun = np.vectorize(lambda x: x**5)
+    elif function == 'convex-concave':
+        fun = np.vectorize(lambda x: 2/H*x**2 if x<= H/2 else -2/H*(x-H)**2+H)
     else:
         raise Exception('Utility name unknown!')
     
@@ -245,3 +251,28 @@ def get_utility(
     U *= H
 
     return U
+
+def inject_noise(
+        pi: list
+) -> list:
+    """
+    Function used in exp2sim to inject some noise in the optimal policies computed.
+    """
+    
+    H = len(pi)
+
+    picopy = [np.copy(pi[h]) for h in range(H)]
+
+    for h in range(H):
+        S, Yh = np.shape(picopy[h])
+
+        # change SY/4 actions at random
+        n_actions_per_state = int(np.floor(Yh/4))
+        for s in range(S):
+            for y in np.random.randint(0, Yh, size=n_actions_per_state):
+                if picopy[h][s,y] == 0:
+                    picopy[h][s,y] += 1
+                else:
+                    picopy[h][s,y] -= 1
+
+    return picopy

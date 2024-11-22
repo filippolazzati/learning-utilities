@@ -106,7 +106,7 @@ class DiscretizedMDP:
             for s in range(self.M.S):
                 for i,y in enumerate(self.y_values[h]):
                     for a in range(self.M.A):
-                        next_y = int((y+self.M.r[s,a,h])*100)
+                        next_y = int((y+self.M.r[s,a,h])/self.eps0)
                         Q[h][s,i,a] = np.dot(V[h+1][:,next_y].ravel(), self.M.p[s,a,h,:])
                     pi[h][s,i] = np.argmax(Q[h][s,i,:])
                     V[h][s,i] = Q[h][s,i,int(pi[h][s,i])]
@@ -135,7 +135,7 @@ class DiscretizedMDP:
         # initialize distribution
         eta = np.zeros(self.d)
 
-        G = (self.sample_returns(pi=pi,n_traj=n_traj)*100).astype(int)
+        G = (self.sample_returns(pi=pi,n_traj=n_traj)/self.eps0).astype(int)
         for g in G:
             eta[g] += 1
 
@@ -167,7 +167,7 @@ class DiscretizedMDP:
         y = np.zeros(n_traj)
 
         for h in range(self.M.H):
-            a = (pi[h][s, (y*100).astype(int)]).astype(int)
+            a = (pi[h][s, (y/self.eps0).astype(int)]).astype(int)
 
             y_prime = y + self.M.r[s,a,h]
 
