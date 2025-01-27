@@ -15,15 +15,18 @@ The repository is organized as follows:
   and class *DiscretizedMDP*, which models a discretization of an MDP.
 - File ```utils.py``` provides some utilities for plotting, and a method for
   constructing some baseline utilities.
-- The experiments described in the paper can be executed by running files
-  ```exp1.py```, ```exp2.py```, and ```exp2sim.py``` (exp2sim represents the
-  second part of experiment 2). The results of the simulations will be saved
-  respectively in folders ```results/exp1```, ```results/exp2```, and
-  ```results/exp2sim```.
-- The results of the two experiments can be analysed through notebooks ```exp1 -
-  analysis.ipynb```, ```exp2 - analysis.ipynb``` and ```exp2sim - analysis.ipynb```. In particular, the latter
-  notebooks will save many plots in folders ```plots/plot 1```, ```plots/plot
-  2```, ```plots/plot 3```, ```plots/plot 4```, ```plots/plot 5```, and ```plots/plot exp2sim```.
+- The experiments described in the paper can be executed by running file
+  ```exp1.ipynb```, ```exp2.py```, ```exp2sim.py``` (exp2sim represents the
+  second part of experiment 2), and ```exp_add.py``` (exp_add is the additional
+  experiment reported in the appendix). The results of the simulations will be
+  saved in folders ```results/exp2```,  ```results/exp2sim```, and
+  ```results/exp_add``` (exp1 does not save anything).
+- The results of experiment 2 and the additional experiment can be analysed
+  through notebooks ```exp2 - analysis.ipynb```, ```exp2sim - analysis.ipynb```,
+  and ```exp_add - analysis.ipynb```. In particular, these notebooks will
+  save many plots in folders ```plots/plot 1```, ```plots/plot 2```,
+  ```plots/plot 3```, ```plots/plot 4```, ```plots/plot 5```, and ```plots/plot
+  exp2sim```.
 - Finally, notebook ```preliminary plots.ipynb``` permits to create in folder
   ```plots/preliminary plots``` plots about some utility functions.
 

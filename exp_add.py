@@ -75,5 +75,5 @@ for i, piE in enumerate(policies):
     print('-'*10+' '+'{:.3}'.format((end_time - start_time)/60)+'min')
 
 # save results
-np.save('results/exp1/abs_comp.npy', all_comp_abs)
-np.save('results/exp1/rel_comp.npy', all_comp_rel)
+np.save('results/exp_add/abs_comp.npy', all_comp_abs)
+np.save('results/exp_add/rel_comp.npy', all_comp_rel)
