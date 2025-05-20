@@ -1,7 +1,8 @@
 # Learning Utilities from Demonstrations in Markov Decision Processes
 
 This repository contains the code and the data needed for running the
-experiments of the paper.
+experiments of the paper "Learning Utilities from Demonstrations in Markov
+Decision Processes" by Lazzati and Metelli published at ICML 2025.
 
 ## Repository Organization
 
